@@ -10,7 +10,7 @@ import os, re, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
-DOMAIN = "https://www.wiprelationshipcounseling.com"
+DOMAIN = "https://wip-wellness.com"
 
 TEL = "971.415.0024"
 TEL_HREF = "+19714150024"
@@ -205,8 +205,9 @@ PAGES["team.html"] = dict(
   "image": "%s/assets/img/grae-rose.jpg"
 }""" % DOMAIN,
     body=phero("Our team", "The person you'll actually be sitting with.",
-               "Work in Progress Wellness is a small practice, which means you get one "
-               "consistent therapist who knows your story &mdash; not a rotating roster.")
+               "Work in Progress Wellness is a one-therapist practice, which means you get "
+               "one consistent person who knows your story &mdash; not a rotating roster. "
+               "More practitioners will join as the retreat programme opens up.")
     + """
   <section class="section">
     <div class="wrap">
@@ -485,37 +486,34 @@ PAGES["testimonials.html"] = dict(
     title="Testimonials | Work in Progress Wellness, Portland OR",
     desc="What clients say about working with Grae Rose at Work in Progress Wellness, Portland, Oregon.",
     body=phero("Testimonials", "In their words.",
-               "Therapy is private work, so these are shared anonymously and only with "
-               "permission.")
-    + """
+               "Therapy is private work. Anything shared here is shared anonymously, "
+               "voluntarily, and only with permission.")
+    + soon("Gathering these now",
+           "Grae is in the middle of asking clients whether they'd like to contribute a few "
+           "words. Rather than fill this page with invented quotes, it's staying honest and "
+           "empty until there are real ones to put here.",
+           "Been helped by the work and want to say so? Mention it next time you speak, or "
+           f"call / text <a class=\"tlink\" href=\"tel:{TEL_HREF}\">{TEL}</a>. Entirely optional, "
+           "and never expected.")
+    + CTA_BAND)
+
+# Reference markup for when real testimonials arrive — kept out of the live page
+# on purpose. Drop this block in place of the `soon(...)` call above and fill in
+# the quotes. Oregon licensing and the ACA code restrict SOLICITING testimonials
+# from current clients, so only publish unsolicited, anonymised, written-consent
+# quotes.
+TESTIMONIAL_MARKUP_WHEN_READY = """
   <section class="section">
     <div class="wrap">
       <div class="tgrid">
         <blockquote class="tcard" data-reveal>
-          <q>Replace this with a real client quote. Keep it short &mdash; two or three
-          sentences is plenty, and specific beats glowing every time.</q>
-          <footer>Client initials &middot; Year</footer>
-        </blockquote>
-        <blockquote class="tcard" data-reveal style="--d:100ms">
-          <q>A second quote goes here. If you have a written review from Psychology Today
-          or Google, it can be pasted straight in.</q>
-          <footer>Client initials &middot; Year</footer>
-        </blockquote>
-        <blockquote class="tcard" data-reveal style="--d:200ms">
-          <q>And a third. Three reads as considered; a wall of twenty reads as marketing.</q>
+          <q>Real client quote here.</q>
           <footer>Client initials &middot; Year</footer>
         </blockquote>
       </div>
-
-      <p class="note" data-reveal style="margin-top:2.5rem; font-size:.875rem; color:var(--ink-faint); max-width:64ch">
-        A note on the placeholders above: Oregon licensing boards and the ACA code of ethics
-        restrict soliciting testimonials from current clients. Anything you publish here should
-        be unsolicited, anonymised and used with written permission &mdash; happy to adjust the
-        wording and layout once you know what you have.
-      </p>
     </div>
   </section>
-""" + CTA_BAND)
+"""
 
 # ------------------------------------------------------------------ Contact
 PAGES["contact.html"] = dict(

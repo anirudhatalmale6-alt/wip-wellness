@@ -85,6 +85,19 @@ for "please call me back", not clinical detail.
 
 ---
 
+## 4b. Testimonials, when you have them
+
+The Testimonials page currently says, honestly, that you're gathering them —
+no invented quotes. When the real ones come in, the markup to paste is sitting
+in `build/pages.py` under `TESTIMONIAL_MARKUP_WHEN_READY`. Send them over and
+I'll drop them in properly.
+
+Worth knowing: Oregon licensing and the ACA code of ethics restrict
+**soliciting** testimonials from current clients. Unsolicited, anonymised, and
+with written permission is the safe side of that line.
+
+---
+
 ## 5. Search engine bits already done
 
 - Unique page title and description on every page
@@ -95,9 +108,15 @@ for "please call me back", not clinical detail.
 - Real headings, image alt text, skip link, keyboard-accessible menu
 - Fast: no framework, no jQuery, ~50 KB of code
 
+Everything already points at **wip-wellness.com**.
+
 Once the domain is live, the one job left is to claim the **Google Business
-Profile** for the practice and submit `https://yourdomain/sitemap.xml` in
-Google Search Console. Happy to walk you through both.
+Profile** for the practice and submit `https://wip-wellness.com/sitemap.xml`
+in Google Search Console. Happy to walk you through both.
+
+One more worth doing: keep the old GoDaddy domain pointed at the new one with a
+redirect for a few months, so anyone with the old link (and any of Google's
+existing results) lands in the right place instead of on an error.
 
 ---
 
